@@ -18,7 +18,7 @@
   </head>
   <body>
     <div class="container">
-      <header>Login</header>
+      <header>Signup</header>
       <form action="https://www.codinglabweb.com/">
         <div class="field email-field">
           <div class="input-field">
@@ -33,11 +33,10 @@
           <div class="input-field">
             <input
               type="password"
-              placeholder="Enter your password"
+              placeholder="Create password"
               class="password"
-              id="password"
             />
-            <i class="bx bx-hide show-hide" id="password-toggle"></i>
+            <i class="bx bx-hide show-hide"></i>
           </div>
           <span class="error password-error">
             <i class="bx bx-error-circle error-icon"></i>
@@ -47,16 +46,30 @@
             </p>
           </span>
         </div>
+        <div class="field confirm-password">
+          <div class="input-field">
+            <input
+              type="password"
+              placeholder="Confirm password"
+              class="cPassword"
+            />
+            <i class="bx bx-hide show-hide"></i>
+          </div>
+          <span class="error cPassword-error">
+            <i class="bx bx-error-circle error-icon"></i>
+            <p class="error-text">Password don't match</p>
+          </span>
+        </div>
         <div class="input-field button">
           <input type="submit" value="Submit Now" />
         </div>
-        <div class="signup-link">
-          <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+        <div class="login-link">
+          <p>Already have an account? <a href="login.html">Login</a></p>
         </div>
       </form>
     </div>
 
     <!-- JavaScript -->
-    <script src="js/login.js"></script>
+    <script src="js/form.js"></script>
   </body>
 </html>

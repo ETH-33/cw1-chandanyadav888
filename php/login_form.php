@@ -29,31 +29,65 @@ if (isset($_POST['submit'])) {
 ?>
 
 <!DOCTYPE html>
+<!-- Coding by CodingLab | www.codinglabweb.com-->
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login form</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email and Password Validation</title>
 
-    <!-- custom css file link  -->
-    <link rel="stylesheet" href="css/style.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/form.css"/>
 
-</head>
-<body>
-    <div class="form-container">
-        <form action="" method="post">
-            <h3>login now</h3>
-            <?php
-            if (isset($error)) {
-                echo '<span class="error-msg">'.$error.'</span>';
-            }
-            ?>
-            <input type="email" name="email" required placeholder="Enter your email">
-            <input type="password" name="password" required placeholder="Enter your password">
-            <input type="submit" name="submit" value="login now" class="form-btn">
-            <p>Don't have an account? <a href="register_form.php">Register now</a></p>
-        </form>
+    <!-- Boxicons CSS -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>Login</header>
+      <form action="index.html">
+        <div class="field email-field">
+          <div class="input-field">
+            <input type="email" placeholder="Enter your email" class="email" />
+          </div>
+          <span class="error email-error">
+            <i class="bx bx-error-circle error-icon"></i>
+            <p class="error-text">Please enter a valid email</p>
+          </span>
+        </div>
+        <div class="field create-password">
+          <div class="input-field">
+            <input
+              type="password"
+              placeholder="Enter your password"
+              class="password"
+              id="password"
+            />
+            <i class="bx bx-hide show-hide" id="password-toggle"></i>
+          </div>
+          <span class="error password-error">
+            <i class="bx bx-error-circle error-icon"></i>
+            <p class="error-text">
+              Please enter at least 8 characters with a number, symbol, small and
+              capital letter.
+            </p>
+          </span>
+        </div>
+        <div class="input-field button">
+          <input type="submit" value="Submit Now" />
+        </div>
+        <div class="signup-link">
+          <p>Don't have an account? <a href="signup.php">Sign Up</a></p>
+        </div>
+      </form>
     </div>
-</body>
+
+    <!-- JavaScript -->
+    <script src="js/login.js"></script>
+  </body>
 </html>
+

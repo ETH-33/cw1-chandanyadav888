@@ -30,38 +30,77 @@ if(isset($_POST['submit'])){
 ?>
 
 <!DOCTYPE html>
+<!-- Coding by CodingLab | www.codinglabweb.com-->
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>register form</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email and Password Validation</title>
 
-    <!-- custom css file link  -->
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <div class="form-container">
-        <form action="" method="post">
-            <h3>register now</h3>
-            <?php
-            if(isset($error)){
-                foreach($error as $err){
-                    echo '<span class="error-msg">'.$err.'</span>';
-                }
-            }
-            ?>
-            <input type="text" name="name" required placeholder="Enter your name">
-            <input type="email" name="email" required placeholder="Enter your email">
-            <input type="password" name="password" required placeholder="Enter your password">
-            <input type="password" name="cpassword" required placeholder="Confirm your password">
-            <select name="user_type">
-                <option value="user">User</option>
-                <option value="admin">Admin</option>
-            </select>
-            <input type="submit" name="submit" value="Register now" class="form-btn">
-            <p>Already have an account? <a href="login_form.php">Login now</a></p>
-        </form>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/form.css" />
+
+    <!-- Boxicons CSS -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>Signup</header>
+      <form action="login.html">
+        <div class="field email-field">
+          <div class="input-field">
+            <input type="email" placeholder="Enter your email" class="email" />
+          </div>
+          <span class="error email-error">
+            <i class="bx bx-error-circle error-icon"></i>
+            <p class="error-text">Please enter a valid email</p>
+          </span>
+        </div>
+        <div class="field create-password">
+          <div class="input-field">
+            <input
+              type="password"
+              placeholder="Create password"
+              class="password"
+            />
+            <i class="bx bx-hide show-hide"></i>
+          </div>
+          <span class="error password-error">
+            <i class="bx bx-error-circle error-icon"></i>
+            <p class="error-text">
+              Please enter at least 8 characters with a number, symbol, small and
+              capital letter.
+            </p>
+          </span>
+        </div>
+        <div class="field confirm-password">
+          <div class="input-field">
+            <input
+              type="password"
+              placeholder="Confirm password"
+              class="cPassword"
+            />
+            <i class="bx bx-hide show-hide"></i>
+          </div>
+          <span class="error cPassword-error">
+            <i class="bx bx-error-circle error-icon"></i>
+            <p class="error-text">Password don't match</p>
+          </span>
+        </div>
+        <div class="input-field button">
+          <input type="submit" value="Submit Now" />
+        </div>
+        <div class="login-link">
+          <p>Already have an account? <a href="login_form.php">Login</a></p>
+        </div>
+      </form>
     </div>
-</body>
+
+    <!-- JavaScript -->
+    <script src="js/form.js"></script>
+  </body>
 </html>
